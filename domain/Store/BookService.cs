@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using Store;
+
 namespace Store
 {
     public class BookService
@@ -11,7 +13,7 @@ namespace Store
         }
         public Book[] GetAllByQuery(string query)
         {
-            if (IsIsbn(query))
+            if (Book.IsIsbn(query))
                 return bookRepository.GetAllByIsbn(query);
 
             return bookRepository.GetByAllTitleOrAuthor(query);
@@ -19,9 +21,6 @@ namespace Store
            
         }
 
-        private bool IsIsbn(string query)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -15,6 +15,11 @@ namespace Store
             Isbn = isbn;
             Author = author;
         }
+
+        public static bool IsIsbn(string s)
+        {
+            return true;
+        }
     }
 
 }

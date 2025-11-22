@@ -4,19 +4,16 @@ using Store.Memory;
 
 namespace Store.Test
 {
-    public class UnitTest1
+    public class BookTest
     {
-        
-
-        public BookService(IBookService bookRepository)
-        {
-            this.bookRepository = bookRepository;
-        }
-
+       
         [Fact]
-        public void Test1()
+        public void IsIsbn_WithNull_ReturnFlase()
         {
-            
+            bool actual = Book.IsIsbn(null);
+
+
+            Assert.True(actual);
         }
     }
 }
