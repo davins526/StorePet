@@ -2,7 +2,8 @@
 {
 public interface IBookRepository
 {
-    Book[] GetByAllTitle(string titlePart);
+    Book[] GetAllByIsbn(string isbn);
+    Book[] GetByAllTitleOrAuthor(string titleOrAuthor);
 }
 
 }
