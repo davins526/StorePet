@@ -16,7 +16,7 @@ namespace Store
             Author = author;
         }
 
-        public static bool IsIsbn(string s)
+        internal static bool IsIsbn(string s)
         {
             return true;
         }
