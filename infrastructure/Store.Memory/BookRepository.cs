@@ -15,7 +15,8 @@ public class BookRepository : IBookRepository
 
     public Book[] GetAllByIsbn(string isbn)
     {
-        throw new NotImplementedException();
+        return books.Where(book => book.Isbn == isbn)
+            .ToArray();    
     }
 
     public Book[] GetBooks(string isbn)
@@ -29,8 +30,9 @@ public class BookRepository : IBookRepository
                     .ToArray();
     }
 
-    public Book[] GetByAllTitleOrAuthor(string titleOrAuthor)
+    public Book[] GetByAllTitleOrAuthor(string query)
     {
-        throw new NotImplementedException();
+        return books.Where(book => book.Author.Contains(query)
+        || book.Title.Contains(query)).ToArray();
     }
 }
