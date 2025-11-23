@@ -36,9 +36,9 @@ public class BookRepository : IBookRepository
         || book.Title.Contains(query)).ToArray();
     }
 
-    public Book[] GetById(int Id)
+    public Book GetById(int Id)
     {
-        return books.Where(book => book.Id == Id)
-               .ToArray();
+        return books.Single(book => book.Id == Id);
+               
     }
 }
