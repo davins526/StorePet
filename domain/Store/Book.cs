@@ -7,14 +7,19 @@ namespace Store
     {
         public int Id { get; }
         public string Isbn { get; }
+        public string Description { get; }
         public string Author { get; }
         public string Title { get; }
-        public Book(int id, string title, string isbn, string author)
+        public decimal Price { get; }
+        public Book(int id, string title, string isbn, string author, 
+                    string description, decimal price)
         {
             Id = id;
             Title = title;
             Isbn = isbn;
+            Description = description;
             Author = author;
+            Price = price;
         }
 
         internal static bool IsIsbn(string s)

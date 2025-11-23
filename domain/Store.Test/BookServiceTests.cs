@@ -10,10 +10,10 @@ public class BookServiceTests
     {
         var bookRepositoryStub = new Mock<IBookRepository>();
         bookRepositoryStub.Setup(x => x.GetAllByIsbn(It.IsAny<string>()))
-            .Returns(new[]{ new Book(1, "", "", "") });
+            .Returns(new[]{ new Book(1, "", "", "", "Des", 5) });
 
         bookRepositoryStub.Setup(x => x.GetAllByIsbn(It.IsAny<string>()))
-            .Returns(new[] { new Book(2, "", "", "") });
+            .Returns(new[] { new Book(2, "", "", "", "Des", 7) });
 
         var bookService = new BookService (bookRepositoryStub.Object);
         var invalidIsbn = "12345-67890";
