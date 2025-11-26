@@ -12,29 +12,28 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Интернет магазин</a>
-            <form class="form-check-inline my-2 my-lg-0" action="@Url.Action("Index","Search")" method="get">
-                <input class="form-control mr-sm-2" type ="search" name="query" placeholder="Автор или название" />
-            </form>
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Интернет магазин</a>
 
+         
+                <div class="mx-auto">
+                    <form class="form-inline d-flex" action="@Url.Action("Index", "Search")" method="get">
+                        <input class="form-control mr-2" type="search" name="query" placeholder="Автор или название" />
+                        <button class="btn btn-outline-success" type="submit">Искать</button>
+                    </form>
+                </div>
+            </div>
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main>
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Store.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
 </body>
 </html>

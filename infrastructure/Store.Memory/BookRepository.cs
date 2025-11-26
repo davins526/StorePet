@@ -8,9 +8,9 @@ public class BookRepository : IBookRepository
 {
     private readonly Book[] books = new[]
     {
-        new Book(1, "Art of game", "ISBN 1231-31231", "Dr dze", "Des", 7m),
-        new Book(1, "Obelix", "ISBN 1241-31231", "Elvine", "Des", 5m),
-        new Book(1, "Down lord", "ISBN 2231-31231", "Polkaz", "Des", 3m),
+        new Book(1, "Art of game", "ISBN 1231-34231", "Dr dze", "Des", 7m),
+        new Book(2, "Obelix", "ISBN 1241-31731", "Elvine", "Des", 5m),     
+        new Book(3, "Down lord", "ISBN 2231-31231", "Polkaz", "Des", 3m),  
     };
 
     public Book[] GetAllByIsbn(string isbn)
@@ -41,4 +41,6 @@ public class BookRepository : IBookRepository
         return books.Single(book => book.Id == Id);
                
     }
+    
+    
 }

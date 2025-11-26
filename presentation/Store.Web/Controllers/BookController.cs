@@ -16,7 +16,7 @@ namespace Store.Web.Controllers
 
             Book book = bookRepository.GetById(id);
 
-            return View();
+            return View(book);
         }
     }
 }
